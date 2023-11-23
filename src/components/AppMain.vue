@@ -9,8 +9,20 @@ export default {
 </script>
 
 <template>
-<h2>Main</h2>
+
+<main>
+    <div class="container">
+        <h2> -- Content goes here -- </h2>
+    </div>
+</main>
 </template>
 
 <style lang="scss" scoped>
+main {
+    background-color: black;
+    padding: 3rem;
+    h2 {
+        color: white;
+    }
+}
 </style>
