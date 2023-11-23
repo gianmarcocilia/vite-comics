@@ -2,12 +2,14 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppBlueBanner from './components/AppBlueBanner.vue';
 
 export default {
   components: {
     AppHeader,
     AppMain,
     AppFooter,
+    AppBlueBanner,
   },
 }
 </script>
@@ -15,6 +17,7 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
+  <AppBlueBanner />
   <AppFooter />
 </template>
 

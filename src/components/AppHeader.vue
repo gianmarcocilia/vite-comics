@@ -90,6 +90,7 @@ header {
             color: black;
             font-weight: bold;
             line-height: calc($header_height - 5px);
+            font-size: 14px;
 
             &:hover {
                 color: $primary_color;
