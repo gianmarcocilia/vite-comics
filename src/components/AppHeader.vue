@@ -73,12 +73,6 @@ export default {
 @use "../style/partials/variables" as *;
 
 header {
-    height: calc($header_height + $header_top_height);
-
-    @include response('sm') {
-        height: $header_height;
-    }
-
     .header-top {
         background-color: black;
         height: $header_top_height;
@@ -98,10 +92,15 @@ header {
 
 .row {
     @include flex (row, space-between, center);
-    height: $header_height;
 
     img {
-        width: calc($header_height - 20px)
+        width: 80px;
+        padding: 10px 0;
+
+        @include response('md') {
+            width: 60px;
+            padding: 5px 0;
+        }
     }
 
     ul {
@@ -148,9 +147,13 @@ header {
             a {
                 text-transform: uppercase;
                 font-weight: bold;
-                line-height: calc($header_height);
+                line-height: 100px;
                 font-size: 14px;
                 color: inherit;
+
+                @include response('md') {
+                    line-height: 70px;
+                }
             }
 
         }
