@@ -31,6 +31,17 @@ export default {
 
                 },
                 {
+                    title: "shop",
+                    subtitle: [
+                        {
+                            link: "Shop DC",
+                        },
+                        {
+                            link: "Shop DC Collectibles"
+                        },
+                    ],
+                },
+                {
                     title: "dc",
                     subtitle: [
                         {
@@ -89,17 +100,7 @@ export default {
                         },
                     ]
                 },
-                {
-                    title: "shop",
-                    subtitle: [
-                        {
-                            link: "Shop DC",
-                        },
-                        {
-                            link: "Shop DC Collectibles"
-                        },
-                    ],
-                },
+                
             ],
             footerBotLinks: [
                 {
@@ -133,26 +134,10 @@ export default {
         <div class="container">
             <section class="footer-top">
                 <div class="row">
-                    <div class="col">
-                        <h4>{{ footerTopLinks[0].title }}</h4>
-                        <ul class="mb-1">
-                            <li v-for="link in footerTopLinks[0].subtitle">{{ link.link }}</li>
-                        </ul>
-                        <h4>{{ footerTopLinks[3].title }}</h4>
+                    <div class="col" v-for="titleLink in footerTopLinks">
+                        <h4>{{titleLink.title}}</h4>
                         <ul>
-                            <li v-for="link in footerTopLinks[3].subtitle">{{ link.link }}</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h4>{{ footerTopLinks[1].title }}</h4>
-                        <ul>
-                            <li v-for="link in footerTopLinks[1].subtitle">{{ link.link }}</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h4>{{ footerTopLinks[2].title }}</h4>
-                        <ul>
-                            <li v-for="link in footerTopLinks[2].subtitle">{{ link.link }}</li>
+                            <li v-for="link in titleLink.subtitle"><a href="">{{link.link}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -188,11 +173,13 @@ footer {
 
         .row {
             padding: 2rem 0;
-            @include flex(row, space-between, stretch);
-            width: 42%;
+            @include flex(column, space-between, flex-start);
+            flex-wrap: wrap;
+            height: 314px;
+            width: 38%;
 
             .col {
-                width: 32%;
+                width: fit-content;
 
                 h4 {
                     text-transform: uppercase;
@@ -203,11 +190,10 @@ footer {
                 li {
                     padding: .2rem 0;
                     font-size: 12px;
-                    color: rgb(142 144 146);
-                }
-
-                .mb-1 {
-                    margin-bottom: .5rem;
+                    
+                    a {
+                        color: rgb(142 144 146);
+                    }
                 }
             }
         }
