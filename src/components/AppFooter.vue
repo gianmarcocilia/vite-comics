@@ -173,7 +173,7 @@ footer {
 
         .row {
             padding: 2rem 0;
-            @include flex(column, space-between, flex-start);
+            @include flex(column, space-between, stretch);
             flex-wrap: wrap;
             height: 314px;
             width: 38%;

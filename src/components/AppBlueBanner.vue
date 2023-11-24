@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-<main>
+<section>
     <div class="container">
         <ul>
             <li v-for="item in bannerItems">
@@ -44,14 +44,14 @@ export default {
             </li>
         </ul>
     </div>
-</main>
+</section>
 </template>
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
 @use "../style/partials/variables" as *;
 
-main {
+section {
     background-color: $primary_color;
     .container {
         padding: 2rem 3rem;
