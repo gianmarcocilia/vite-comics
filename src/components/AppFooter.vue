@@ -135,9 +135,9 @@ export default {
             <section class="footer-top">
                 <div class="row">
                     <div class="col" v-for="titleLink in footerTopLinks">
-                        <h4>{{titleLink.title}}</h4>
+                        <h4>{{ titleLink.title }}</h4>
                         <ul>
-                            <li v-for="link in titleLink.subtitle"><a href="">{{link.link}}</a></li>
+                            <li v-for="link in titleLink.subtitle"><a href="">{{ link.link }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -166,20 +166,45 @@ export default {
 footer {
     background-image: url(../assets/img/footer-bg.jpg);
 
+    .container {
+        @include response('md') {
+            width: 95%;
+        }
+    }
+
     .footer-top {
         background-image: url(../assets/img/dc-logo-bg.png);
         background-repeat: no-repeat;
         background-position: right;
+
+        @include response('l') {
+            background-size: 350px;
+        }
+
+        @include response('md') {
+            background-size: 50%;
+        }
 
         .row {
             padding: 2rem 0;
             @include flex(column, space-between, stretch);
             flex-wrap: wrap;
             height: 314px;
-            width: 38%;
+            width: 45%;
+
+            @include response('sm') {
+                height: auto;
+                width: 100%;
+                @include flex(row, space-between, stretch);
+            }
 
             .col {
                 width: fit-content;
+
+                @include response('sm') {
+                    width: calc(100% / 4);
+                    text-align: center;
+                }
 
                 h4 {
                     text-transform: uppercase;
@@ -190,7 +215,7 @@ footer {
                 li {
                     padding: .2rem 0;
                     font-size: 12px;
-                    
+
                     a {
                         color: rgb(142 144 146);
                     }
@@ -211,8 +236,15 @@ footer {
                 @include flex (row, space-between, center);
                 gap: 1rem;
 
+                @include response('sm') {
+                    display: none;
+                }
+
                 h4 {
                     color: $primary_color;
+                    @include response('md') {
+                    display: none;
+                }
                 }
             }
         }
