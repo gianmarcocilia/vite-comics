@@ -71,10 +71,10 @@ export default {
 @use "../style/partials/variables" as *;
 
 header {
-    height: $header_height;
+    height: calc($header_height + $header_top_height);
     .header-top {
         background-color: black;
-        height: 30px;
+        height: $header_top_height;
     }
 }
 
