@@ -49,7 +49,7 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
-@use "../style/partials/variables" as *;
+@use "../style/partials/_variables" as *;
 
 section {
     background-color: $primary_color;

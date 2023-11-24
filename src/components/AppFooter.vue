@@ -1,4 +1,6 @@
 <script>
+import AppButton from './AppButton.vue';
+
 export default {
     data() {
         return {
@@ -28,7 +30,6 @@ export default {
                             link: "News",
                         },
                     ],
-
                 },
                 {
                     title: "shop",
@@ -78,7 +79,6 @@ export default {
                             link: "Contact Us",
                         },
                     ],
-
                 },
                 {
                     title: "sites",
@@ -100,7 +100,6 @@ export default {
                         },
                     ]
                 },
-                
             ],
             footerBotLinks: [
                 {
@@ -119,13 +118,14 @@ export default {
                     link: "youtube"
                 }
             ]
-        }
+        };
     },
     methods: {
         getImagePath(imgName) {
             return new URL(`../assets/img/footer-${imgName}.png`, import.meta.url).href;
         }
-    }
+    },
+    components: { AppButton }
 }
 </script>
 
@@ -146,7 +146,7 @@ export default {
         <section class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <button>SIGN-UP NOW!</button>
+                    <AppButton :isOutline="true" text="sign up" />
                     <ul>
                         <li>
                             <h4>FOLLOW US</h4>
@@ -206,13 +206,6 @@ footer {
         .row {
             @include flex (row, space-between, center);
             padding: 1.5rem 0;
-
-            button {
-                background-color: transparent;
-                padding: .5rem;
-                border: 1px solid $primary_color;
-                color: white;
-            }
 
             ul {
                 @include flex (row, space-between, center);

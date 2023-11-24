@@ -11,11 +11,6 @@ export default {
     AppFooter,
     AppBlueBanner,
   },
-  data() {
-    return {
-      
-    }
-  }
 }
 </script>
 

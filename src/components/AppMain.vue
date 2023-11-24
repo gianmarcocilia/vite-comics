@@ -1,4 +1,5 @@
 <script>
+import AppButton from './AppButton.vue';
 import AppCard from './AppCard.vue';
 
 export default {
@@ -80,7 +81,7 @@ export default {
             ]
         };
     },
-    components: { AppCard }
+    components: { AppCard, AppButton }
 }
 </script>
 
@@ -93,7 +94,9 @@ export default {
                 <AppCard :title="item.series" :image="item.thumb"/>
             </div>
         </div>
-        
+        <div class="button">
+            <AppButton :isOutline="false" text="load more" />
+        </div>
     </div>
 </main>
 </template>
@@ -115,6 +118,12 @@ main {
         .col {
             width: calc((100% / 6) - 5rem / 6);
         }
+    }
+
+    .button {
+        padding-top: 1.5rem ;
+        display: flex;
+        justify-content: center;
     }
 }
 </style>
