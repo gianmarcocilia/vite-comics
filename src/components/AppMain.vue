@@ -89,6 +89,9 @@ export default {
 
 <main>
     <div class="container">
+        <div class="top-button">
+            <AppButton :isOutline="false" text="current series"/>
+        </div>
         <div class="row">
             <div class="col" v-for="item in comics">
                 <AppCard :title="item.series" :image="item.thumb"/>
@@ -108,6 +111,16 @@ export default {
 main {
     background-color: $main_bg_color;
     padding: 3rem 0;
+    position: relative;
+
+    .top-button {
+        position: absolute;
+        left: 150px;
+        top: 0;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: bold;
+    }
     
     .row {
         @include flex (row, space-between, stretch);
@@ -124,6 +137,7 @@ main {
         padding-top: 1.5rem ;
         display: flex;
         justify-content: center;
+        font-size: 14px;
     }
 }
 </style>

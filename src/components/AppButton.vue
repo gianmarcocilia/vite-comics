@@ -23,7 +23,8 @@ a {
     width: fit-content;
     border: none;
     padding: .5rem 1rem;
-    font-size: 14px;
+    font-size: inherit;
+    font-weight: inherit;
 
     &.outline {
         background-color: transparent;
