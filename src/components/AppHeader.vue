@@ -54,6 +54,7 @@ export default {
 
 <template>
     <header>
+        <div class="header-top"></div>
         <div class="container">
             <div class="row">
                 <img src="../assets/img/dc-logo.png" alt="">
@@ -71,6 +72,10 @@ export default {
 
 header {
     height: $header_height;
+    .header-top {
+        background-color: black;
+        height: 30px;
+    }
 }
 
 .row {
