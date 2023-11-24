@@ -59,7 +59,7 @@ export default {
             <div class="row">
                 <img src="../assets/img/dc-logo.png" alt="">
                 <ul>
-                    <li v-for="(item, index) in navItems" :key="item.title"><a :class="{'active': item.isActive}" href="">{{ item.title }}</a></li>
+                    <li v-for="(item, index) in navItems" :key="item.title" :class="{ 'active': item.isActive }"><a href="">{{ item.title }}</a></li>
                 </ul>
             </div>
         </div>
@@ -72,6 +72,7 @@ export default {
 
 header {
     height: calc($header_height + $header_top_height);
+
     .header-top {
         background-color: black;
         height: $header_top_height;
@@ -90,38 +91,44 @@ header {
         @include flex (row, space-between, center);
         gap: 1rem;
 
-        li a {
-            text-transform: uppercase;
-            color: black;
-            font-weight: bold;
-            line-height: calc($header_height - 5px);
-            font-size: 14px;
-
-            &:hover {
-                color: $primary_color;
-            }
+        li {
+            position: relative;
 
             &::after {
-                content: '';
-                display: block;
-                height: 5px;
-                width: 0;
-                background-color: $primary_color;
-            }
+                    content: '';
+                    display: block;
+                    background-color: $primary_color;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                }
 
             &:hover::after {
-                width: 100%;
+                height: 5px;
+            }
+
+            &:hover {
+                    color: $primary_color;
+                }
+            
+            &.active::after {
+                height: 5px;
             }
 
             &.active {
                 color: $primary_color;
             }
 
-            &.active::after {
-                width: 100%;
+            a {
+                text-transform: uppercase;
+                font-weight: bold;
+                line-height: calc($header_height);
+                font-size: 14px;
+                color: inherit;
             }
+
         }
     }
-
 }
 </style>
